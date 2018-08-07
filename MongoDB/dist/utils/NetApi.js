@@ -519,7 +519,7 @@ var NetApi = function () {
          * @param columnName:栏目名称
          * @param aPageIndex:当前页索引0开始
          * @param aPageSize:每页大小
-         * @returns {Promise<any>}
+         * @returns {Promise<Array>}
          */
 
     }, {

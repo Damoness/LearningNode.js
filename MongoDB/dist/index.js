@@ -123,6 +123,8 @@ MongoClient.connect(url, function (err, client) {
 
     var index = 0;
 
+    console.log("开始");
+
     var nIntervId = setInterval(function () {
 
         _NetApi2.default.request_newsListData(encodeURI("荐读"), index++, 50).then(function (newsData) {
@@ -132,15 +134,16 @@ MongoClient.connect(url, function (err, client) {
                 collection.insertMany(newsData, function (err, result) {
 
                     assert.equal(err, null);
-                    console.log('插入:' + JSON.stringify(result));
+                    //console.log('插入:'+JSON.stringify(result));
                 });
             } else {
 
                 clearInterval(nIntervId);
+                console.log("结束");
             }
         }).catch(function (err) {
 
             console.log(err);
         });
-    }, 20);
+    }, 100);
 });

@@ -122,6 +122,8 @@ MongoClient.connect(url,(err,client)=>{
 
     let index = 0;
 
+    console.log("开始");
+
     let nIntervId = setInterval(()=>{
 
         NetApi.request_newsListData(encodeURI("荐读"),index++,50).then(newsData=>{
@@ -132,13 +134,14 @@ MongoClient.connect(url,(err,client)=>{
                 collection.insertMany(newsData,(err,result)=>{
 
                     assert.equal(err, null);
-                    console.log('插入:'+JSON.stringify(result));
+                    //console.log('插入:'+JSON.stringify(result));
 
                 });
 
             }else {
 
                 clearInterval(nIntervId);
+                console.log("结束");
 
             }
 
@@ -149,7 +152,7 @@ MongoClient.connect(url,(err,client)=>{
 
         });
 
-    },60);
+    },100);
 
 
 });
