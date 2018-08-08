@@ -28,8 +28,6 @@ const insertDocuments = function(db, callback) {
 }
 
 
-// const MongoClient = require('mongodb').MongoClient;
-
 const assert = require('assert');
 
 // Connection URL
@@ -37,7 +35,6 @@ const url = 'mongodb://localhost:27017';
 
 // Database Name
 const dbName = 'mongodb';
-
 
 // Use connect method to connect to the server
 
@@ -86,38 +83,38 @@ function registerUser() {
 
 //发布评论
 function postComments() {
-    MongoClient.connect(url,(err,client)=>{
+    MongoClient.connect(url, (err, client) => {
         assert.equal(null, err);
         console.log("Connected successfully to server");
         const db = client.db(dbName);
         const collection = db.collection('users');
-        collection.find({}).toArray(function(err, docs) {
+        collection.find({}).toArray(function (err, docs) {
             assert.equal(err, null);
             //console.log("Found the following records");
             //console.log(docs)
+
             let i = 0;
             let user;
 
-            setInterval(()=>{
+            setInterval(() => {
 
 
-                user=docs[i];
-                NetApi.post_comments(user.phone,"A185983476424",user.userId,"").then(data=>{
+                user = docs[i];
+                NetApi.post_comments(user.phone, "A185983476424", user.userId, "").then(data => {
 
                     console.log(data);
-                    i=i+1;
+                    i = i + 1;
 
                 });
 
 
-            },3000);
+            }, 3000);
 
 
         });
 
 
     });
-
 }
 
 
@@ -212,7 +209,6 @@ function getNewsListData(){
 
         })
 
-
     });
 
 }
@@ -255,25 +251,6 @@ async function getNewsDetailData(){
                 }
 
 
-                    // NetApi.request_newsDetailData(doc.jumpContent).then(data=>{
-                    //
-                    //         console.log(JSON.stringify(data));
-                    //
-                    //         db.collection('newsDetailList').insertOne(data,(err,result)=>{
-                    //
-                    //             assert.equal(err, null);
-                    //             console.log('插入1条数据:'+JSON.stringify(data)+result);
-                    //
-                    //             });
-                    //
-                    //     }
-                    // ).catch(err=>{
-                    //     console.log(err);
-                    // })
-
-
-
-
             }else if(doc.redirectId === NewsJumpType.QCNewsJumpType_Video){
 
                 try {
@@ -289,9 +266,6 @@ async function getNewsDetailData(){
                 }
             }
 
-
-
-            //console.dir(doc);
         }
 
 
@@ -307,6 +281,7 @@ async function getNewsDetailData(){
 }
 
 
+//获取文章详情信息
 function  getNewsDetailData2(){
 
     MongoClient.connect(url,(err,client)=> {
@@ -402,7 +377,6 @@ function  getNewsDetailData2(){
 getNewsDetailData2();
 
 
-//getNewsListData();
 
 
 

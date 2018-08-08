@@ -32,8 +32,6 @@ var insertDocuments = function insertDocuments(db, callback) {
     });
 };
 
-// const MongoClient = require('mongodb').MongoClient;
-
 var assert = require('assert');
 
 // Connection URL
@@ -88,6 +86,7 @@ function postComments() {
             assert.equal(err, null);
             //console.log("Found the following records");
             //console.log(docs)
+
             var i = 0;
             var user = void 0;
 
@@ -206,23 +205,6 @@ async function getNewsDetailData() {
 
                     console.log(err);
                 }
-
-                // NetApi.request_newsDetailData(doc.jumpContent).then(data=>{
-                //
-                //         console.log(JSON.stringify(data));
-                //
-                //         db.collection('newsDetailList').insertOne(data,(err,result)=>{
-                //
-                //             assert.equal(err, null);
-                //             console.log('插入1条数据:'+JSON.stringify(data)+result);
-                //
-                //             });
-                //
-                //     }
-                // ).catch(err=>{
-                //     console.log(err);
-                // })
-
             } else if (doc.redirectId === _NewsModel.NewsJumpType.QCNewsJumpType_Video) {
 
                 try {
@@ -235,8 +217,6 @@ async function getNewsDetailData() {
                     console.log(err);
                 }
             }
-
-            //console.dir(doc);
         }
     } catch (err) {
         console.log(err.stack);
@@ -247,6 +227,7 @@ async function getNewsDetailData() {
     }
 }
 
+//获取文章详情信息
 function getNewsDetailData2() {
 
     _mongodb.MongoClient.connect(url, function (err, client) {
@@ -295,8 +276,11 @@ function getNewsDetailData2() {
                     });
                 } else {
 
-                    clearInterval(id);
-                    console("结束");
+                    setTimeout(function () {
+
+                        clearInterval(id);
+                        console("结束");
+                    }, 5000);
                 }
             });
         }, 30);
@@ -304,5 +288,3 @@ function getNewsDetailData2() {
 }
 
 getNewsDetailData2();
-
-//getNewsListData();
