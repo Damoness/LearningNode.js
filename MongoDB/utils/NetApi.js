@@ -182,7 +182,7 @@ export default class NetApi {
 
     /**
      * 获取导航栏列表
-     * @returns {Promise<any>}
+     * @returns {Promise<Array>}
      */
     static request_columnListData(){
 
@@ -441,7 +441,9 @@ export default class NetApi {
         if (data.Code === '200'){
             return data.Data[0];
         }else {
-            Alert.alert(data.Code);
+            //Alert.alert(data.Code);
+            console.log("错误代码:"+data.Code +" url:"+url);
+            resolve(data.Code);
         }
 
 
@@ -472,6 +474,8 @@ export default class NetApi {
 
         let url = baseURL+'/Content/getNews/'+newsId;
 
+        console.log(new Date().getTime() + "开始:"+url);
+
         return new Promise((resolve, reject) => {
 
             HttpUtils.get(url).then(data =>{
@@ -479,7 +483,8 @@ export default class NetApi {
                 if (data.Code === '200'){
                     resolve(data.Data[0])
                 }else {
-                    Alert.alert(data.Code);
+                    console.log("错误代码:"+data.Code +" url:"+url);
+                    resolve(data.Code);
                 }
 
             }).catch(reject);
@@ -529,10 +534,13 @@ export default class NetApi {
      */
     static request_newsListData(columnName,aPageIndex,aPageSize){
 
+        let url = `${baseURL}/home/getlist/${columnName}/${aPageIndex}/${aPageSize}`;
+
+        console.log(url);
 
         return new Promise((resolve,reject)=>{
 
-            HttpUtils.get(`${baseURL}/home/getlist/${columnName}/${aPageIndex}/${aPageSize}`)
+            HttpUtils.get(url)
                 .then(data =>{
 
                         resolve(this.parseNewsData(data.Data));

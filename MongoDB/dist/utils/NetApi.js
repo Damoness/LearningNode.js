@@ -194,7 +194,7 @@ var NetApi = function () {
 
         /**
          * 获取导航栏列表
-         * @returns {Promise<any>}
+         * @returns {Promise<Array>}
          */
 
     }, {
@@ -442,7 +442,9 @@ var NetApi = function () {
             if (data.Code === '200') {
                 return data.Data[0];
             } else {
-                Alert.alert(data.Code);
+                //Alert.alert(data.Code);
+                console.log("错误代码:" + data.Code + " url:" + url);
+                resolve(data.Code);
             }
 
             // return new Promise((resolve, reject) => {
@@ -473,6 +475,8 @@ var NetApi = function () {
 
             var url = baseURL + '/Content/getNews/' + newsId;
 
+            console.log(new Date().getTime() + "开始:" + url);
+
             return new Promise(function (resolve, reject) {
 
                 _HttpUtils2.default.get(url).then(function (data) {
@@ -480,7 +484,8 @@ var NetApi = function () {
                     if (data.Code === '200') {
                         resolve(data.Data[0]);
                     } else {
-                        Alert.alert(data.Code);
+                        console.log("错误代码:" + data.Code + " url:" + url);
+                        resolve(data.Code);
                     }
                 }).catch(reject);
             });
@@ -519,7 +524,7 @@ var NetApi = function () {
          * @param columnName:栏目名称
          * @param aPageIndex:当前页索引0开始
          * @param aPageSize:每页大小
-         * @returns {Promise<any>}
+         * @returns {Promise<Array>}
          */
 
     }, {
@@ -527,9 +532,13 @@ var NetApi = function () {
         value: function request_newsListData(columnName, aPageIndex, aPageSize) {
             var _this2 = this;
 
+            var url = baseURL + '/home/getlist/' + columnName + '/' + aPageIndex + '/' + aPageSize;
+
+            console.log(url);
+
             return new Promise(function (resolve, reject) {
 
-                _HttpUtils2.default.get(baseURL + '/home/getlist/' + columnName + '/' + aPageIndex + '/' + aPageSize).then(function (data) {
+                _HttpUtils2.default.get(url).then(function (data) {
 
                     resolve(_this2.parseNewsData(data.Data));
                 }).catch(function (error) {
