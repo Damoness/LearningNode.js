@@ -255,7 +255,7 @@ function getNewsDetailData2() {
                                 db.collection('newsDetailList').insertOne(data, function (err, result) {
 
                                     assert.equal(err, null);
-                                    console.log(new Date().getTime() + JSON.stringify(result));
+                                    console.log(Date.now() + JSON.stringify(result));
                                 });
                             }).catch(function (err) {
                                 console.log(err);
@@ -267,7 +267,7 @@ function getNewsDetailData2() {
                                 db.collection('videoDetailList').insertOne(data, function (err, result) {
 
                                     assert.equal(err, null);
-                                    console.log(new Date().getTime() + JSON.stringify(result));
+                                    console.log(Date.now() + JSON.stringify(result));
                                 });
                             }).catch(function (err) {
                                 console.log(err);
@@ -279,12 +279,15 @@ function getNewsDetailData2() {
                     setTimeout(function () {
 
                         clearInterval(id);
-                        console("结束");
+                        console.log("结束");
                     }, 5000);
                 }
             });
-        }, 30);
+        }, 100);
     });
 }
+
+//getNewsListData();
+
 
 getNewsDetailData2();

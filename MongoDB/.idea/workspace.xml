@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad0307cd-1db7-4826-a5d1-97688bf994b1" name="Default" comment="" />
+    <list default="true" id="ad0307cd-1db7-4826-a5d1-97688bf994b1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ExpressTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,31 +25,33 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ExpressTest.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ExpressTest.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
-              <folding>
-                <element signature="e#1#36#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="416">
+              <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewsModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/NewsModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="164" selection-start-line="164" selection-end-line="165" selection-end-column="36" />
-            </state>
-          </provider>
+      <file leaf-file-name="MongoDB/mongodb/newsDetailList" pinned="false" current-in-tab="false">
+        <entry file="mongo://MongoDB/mongodb/newsDetailList">
+          <provider selected="true" editor-type-id="MongoData" />
         </entry>
       </file>
       <file leaf-file-name="MongoDB/mongodb/newslist" pinned="false" current-in-tab="false">
@@ -49,17 +59,24 @@
           <provider selected="true" editor-type-id="MongoData" />
         </entry>
       </file>
+      <file leaf-file-name="NewsModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/NewsModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2460">
+              <caret line="164" selection-start-line="164" selection-end-line="165" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Utils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/Utils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-22" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="HttpUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/HttpUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
+            <state relative-caret-position="1950">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
             </state>
           </provider>
@@ -68,8 +85,8 @@
       <file leaf-file-name="NetApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/NetApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="476" column="40" selection-start-line="476" selection-start-column="20" selection-end-line="476" selection-end-column="40" />
+            <state relative-caret-position="-2047">
+              <caret line="480" column="40" selection-start-line="480" selection-start-column="40" selection-end-line="480" selection-end-column="40" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -91,6 +108,9 @@
       <find>错误代码</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -98,6 +118,7 @@
         <option value="$PROJECT_DIR$/app/test.js" />
         <option value="$PROJECT_DIR$/utils/NetApi.js" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/ExpressTest.js" />
       </list>
     </option>
   </component>
@@ -113,11 +134,12 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="40" />
+    <option name="x" value="57" />
     <option name="y" value="23" />
     <option name="width" value="1804" />
     <option name="height" value="1025" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -129,27 +151,6 @@
             <path>
               <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-              <item name="dist" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,48 +210,65 @@
       <workItem from="1533266116878" duration="3194000" />
       <workItem from="1533274029796" duration="1476000" />
       <workItem from="1533711282256" duration="8598000" />
+      <workItem from="1533729075605" duration="6393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25029000" />
+    <option name="totallyTimeSpent" value="31422000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="23" width="1804" height="1025" extended-state="0" />
+    <frame x="57" y="23" width="1804" height="1025" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21736664" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2122588" side_tool="true" visible="true" weight="0.49944752" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7877412" visible="true" weight="0.49944752" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.19409762" side_tool="true" visible="true" weight="0.5959052" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.65493757" weight="0.45043105" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49943247" weight="0.3297414" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.26560727" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8070375" weight="0.45524862" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.71339387" weight="0.3436464" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.24858116" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.80590236" visible="true" weight="0.5959052" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21736664" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.26560727" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2122588" side_tool="true" visible="true" weight="0.38674033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8070375" weight="0.45524862" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -268,13 +286,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -559,16 +570,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/test.mjs" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/NewsModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
+        <state relative-caret-position="2460">
           <caret line="164" selection-start-line="164" selection-end-line="165" selection-end-column="36" />
         </state>
       </provider>
@@ -588,34 +592,43 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/Utils.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/HttpUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22" />
+        <state relative-caret-position="1950">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/NetApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="476" column="40" selection-start-line="476" selection-start-column="20" selection-end-line="476" selection-end-column="40" />
+        <state relative-caret-position="-2047">
+          <caret line="480" column="40" selection-start-line="480" selection-start-column="40" selection-end-line="480" selection-end-column="40" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/HttpUtils.js">
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="130" selection-start-line="130" selection-end-line="130" />
+        <state relative-caret-position="416">
+          <caret line="389" lean-forward="true" selection-start-line="389" selection-end-line="389" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="369" lean-forward="true" selection-start-line="369" selection-end-line="369" />
-          <folding>
-            <element signature="e#1#36#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpressTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
