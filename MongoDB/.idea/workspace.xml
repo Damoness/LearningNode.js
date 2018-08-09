@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad0307cd-1db7-4826-a5d1-97688bf994b1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/__test__/sum.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MongoDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MongoDB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mongoSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExpressTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/ExpressTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="ad0307cd-1db7-4826-a5d1-97688bf994b1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,16 +18,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sum.test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/__test__/sum.test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -183,11 +165,6 @@
             <path>
               <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
-              <item name="__test__" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MongoDB" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MongoDB" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -256,12 +233,20 @@
       <workItem from="1533711282256" duration="8598000" />
       <workItem from="1533729075605" duration="6393000" />
       <workItem from="1533780026483" duration="3403000" />
-      <workItem from="1533804708467" duration="725000" />
+      <workItem from="1533804708467" duration="784000" />
     </task>
+    <task id="LOCAL-00001" summary="Express使用">
+      <created>1533806090080</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533806090080</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35550000" />
+    <option name="totallyTimeSpent" value="35609000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="598" y="60" width="1804" height="1025" extended-state="0" />
@@ -318,6 +303,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Express使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="Express使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -674,14 +663,14 @@
     <entry file="file://$PROJECT_DIR$/__test__/sum.test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
         </state>
       </provider>
     </entry>
