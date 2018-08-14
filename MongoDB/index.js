@@ -5,6 +5,7 @@ import {NewsJumpType} from "./model/NewsModel";
 
 
 import {MongoClient} from 'mongodb'
+import TouTiaoNetApi from "./utils/TouTiaoNetApi";
 
 
 
@@ -73,7 +74,7 @@ function registerUser() {
 
             });
 
-        },10);
+        },30);
 
 
     });
@@ -368,25 +369,118 @@ function  getNewsDetailData2(){
     })
 
 
+}
+
+
+
+
+
+async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
+
+    let client;
+    let count = 0;
+
+    try {
+
+        client = await MongoClient.connect(url);
+
+        const db = client.db(dbName);
+        const collection = db.collection('toutiaoCommentsList');
+
+        let data = await TouTiaoNetApi.request_commentsListData(articleId,aPageIndex,aPageSize);
+        console.log("一级评论:" + JSON.stringify(data));
+
+        if (data.data.total > 0 && data.data.comments.length > 0){
+
+            let result = await collection.insertMany(data.data.comments);
+
+            count +=result.insertedCount;
+
+            console.log(Date.now() + JSON.stringify(result));
+
+            for (let comments of data.data.comments){
+
+                if (comments.reply_count > 0){
+
+                    // let data2 = await TouTiaoNetApi.request_replyCommentsListData(comments.id,0,20);
+                    // console.log("二级评论:"+JSON.stringify(data2));
+                    //
+                    // if (data2.data.data.length > 0){
+                    //
+                    //     let r = await collection.insertMany(data2.data.data);
+                    //     count +=r.insertedCount;
+                    //     console.log(Date.now() + JSON.stringify(r));
+                    //
+                    // }
+
+                   count = await getTouTiaoReplyComments(collection,count,comments.id,0,20);
+
+                }
+            }
+
+        }
+
+
+        if (data.data.has_more){
+            count += await testGetTouTiaoComments(articleId,aPageIndex+1,aPageSize);
+        }
+
+
+    }catch (err) {
+        console.log(err.stack);
+    }
+
+    if (client) {
+
+        console.log("获取评论总数:"+count);
+
+        client.close();
+    }
+
+
+    return count;
 
 
 }
 
+
+async function getTouTiaoReplyComments(collection,count,commentId,aPageIndex,aPageSize){
+
+    let data2 = await TouTiaoNetApi.request_replyCommentsListData(commentId,aPageIndex,aPageSize);
+    console.log("二级评论:"+JSON.stringify(data2));
+
+    if (data2.data.data.length > 0){
+
+        let r = await collection.insertMany(data2.data.data);
+        count +=r.insertedCount;
+        console.log(Date.now() + JSON.stringify(r));
+
+    }
+
+    if (data2.data.has_more){
+        count += await getTouTiaoReplyComments(collection,count,commentId,aPageIndex+1,aPageSize);
+    }
+
+    return count;
+
+}
+
+
+(async function f() {
+
+    let total = 0;
+
+    total = await testGetTouTiaoComments('6589502528277185038',0,10);
+
+    console.log("获取评论总数total:"+total);
+
+})()
+
+
+
 //getNewsListData();
-
-
-getNewsDetailData2();
-
-
-
-
-
-
-
-
-
-
-
+//registerUser();
+//getNewsDetailData2();
 
 
 
