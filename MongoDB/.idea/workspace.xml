@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad0307cd-1db7-4826-a5d1-97688bf994b1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/TouTiaoNetApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dist/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/TouTiaoNetApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/TouTiaoNetApi.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="472" column="61" selection-start-line="472" selection-start-column="61" selection-end-line="472" selection-end-column="61" />
+            <state relative-caret-position="161">
+              <caret line="481" column="4" lean-forward="true" selection-start-line="481" selection-start-column="4" selection-end-line="481" selection-end-column="4" />
               <folding>
                 <element signature="e#1#36#0" expanded="true" />
               </folding>
@@ -81,7 +80,7 @@
       <file leaf-file-name="HttpUtils.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/HttpUtils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
+            <state relative-caret-position="1950">
               <caret line="130" selection-start-line="130" selection-end-line="130" />
             </state>
           </provider>
@@ -90,8 +89,8 @@
       <file leaf-file-name="NetApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/NetApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="102" column="65" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="65" />
+            <state relative-caret-position="1485">
+              <caret line="102" column="65" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="65" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -102,8 +101,8 @@
       <file leaf-file-name="TouTiaoNetApi.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/TouTiaoNetApi.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="73" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="73" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -121,6 +120,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>错误代码</find>
+      <find>用什么打。。。</find>
+      <find>是吗，自己查查去吧，看看去年和帕萨特哪个多</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,7 +157,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="103" />
+    <option name="x" value="70" />
     <option name="y" value="23" />
     <option name="width" value="1804" />
     <option name="height" value="1025" />
@@ -167,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,7 +190,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +249,8 @@
       <workItem from="1533804708467" duration="1500000" />
       <workItem from="1534250361383" duration="54000" />
       <workItem from="1534250421958" duration="481000" />
-      <workItem from="1534250927120" duration="10863000" />
+      <workItem from="1534250927120" duration="11131000" />
+      <workItem from="1534297326433" duration="5953000" />
     </task>
     <task id="LOCAL-00001" summary="Express使用">
       <created>1533806090080</created>
@@ -264,27 +266,34 @@
       <option name="project" value="LOCAL" />
       <updated>1533806202617</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.TouTiaoNetApi">
+      <created>1534265491741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1534265491741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47723000" />
+    <option name="totallyTimeSpent" value="53944000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="103" y="23" width="1804" height="1025" extended-state="0" />
+    <frame x="70" y="23" width="1804" height="1025" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16799092" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.14812712" side_tool="true" visible="true" weight="0.5436464" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.1492622" side_tool="true" visible="true" weight="0.61767954" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8507378" visible="true" weight="0.61767954" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49943247" weight="0.3297414" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85187286" visible="true" weight="0.5436464" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.19466515" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" visible="true" weight="0.1969353" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.8030647" weight="0.3635359" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -329,7 +338,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Express使用" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="1.TouTiaoNetApi" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.TouTiaoNetApi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -647,7 +657,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/HttpUtils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
+        <state relative-caret-position="1950">
           <caret line="130" selection-start-line="130" selection-end-line="130" />
         </state>
       </provider>
@@ -657,8 +667,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/NetApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="102" column="65" lean-forward="true" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="65" />
+        <state relative-caret-position="1485">
+          <caret line="102" column="65" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="65" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -667,15 +677,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/TouTiaoNetApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="73" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="73" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="472" column="61" selection-start-line="472" selection-start-column="61" selection-end-line="472" selection-end-column="61" />
+        <state relative-caret-position="161">
+          <caret line="481" column="4" lean-forward="true" selection-start-line="481" selection-start-column="4" selection-end-line="481" selection-end-column="4" />
           <folding>
             <element signature="e#1#36#0" expanded="true" />
           </folding>

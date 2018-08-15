@@ -375,7 +375,7 @@ function  getNewsDetailData2(){
 
 
 
-async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
+async function testGetTouTiaoComments(articleId,offset,size){
 
     let client;
     let count = 0;
@@ -387,8 +387,8 @@ async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
         const db = client.db(dbName);
         const collection = db.collection('toutiaoCommentsList');
 
-        let data = await TouTiaoNetApi.request_commentsListData(articleId,aPageIndex,aPageSize);
-        console.log("一级评论:" + JSON.stringify(data));
+        let data = await TouTiaoNetApi.request_commentsListData(articleId,offset,size);
+        //console.log("一级评论:" + JSON.stringify(data));
 
         if (data.data.total > 0 && data.data.comments.length > 0){
 
@@ -396,24 +396,23 @@ async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
 
             count +=result.insertedCount;
 
-            console.log(Date.now() + JSON.stringify(result));
+            //console.log("一级评论:" + result.insertedCount);
+
+            //console.log(Date.now() + JSON.stringify(result));
 
             for (let comments of data.data.comments){
 
+                console.log(comments.text);
+
                 if (comments.reply_count > 0){
 
-                    // let data2 = await TouTiaoNetApi.request_replyCommentsListData(comments.id,0,20);
-                    // console.log("二级评论:"+JSON.stringify(data2));
-                    //
-                    // if (data2.data.data.length > 0){
-                    //
-                    //     let r = await collection.insertMany(data2.data.data);
-                    //     count +=r.insertedCount;
-                    //     console.log(Date.now() + JSON.stringify(r));
-                    //
-                    // }
+                    let replyCount = 0;
 
-                   count = await getTouTiaoReplyComments(collection,count,comments.id,0,20);
+                    replyCount += await getTouTiaoReplyComments(collection,comments.id,0,10);
+
+                    console.log("  总数:"+replyCount);
+
+                    count += replyCount;
 
                 }
             }
@@ -422,7 +421,8 @@ async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
 
 
         if (data.data.has_more){
-            count += await testGetTouTiaoComments(articleId,aPageIndex+1,aPageSize);
+            //console.log("当前评论总数:"+count);
+            count += await testGetTouTiaoComments(articleId,offset+data.data.comments.length,size);
         }
 
 
@@ -431,8 +431,6 @@ async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
     }
 
     if (client) {
-
-        console.log("获取评论总数:"+count);
 
         client.close();
     }
@@ -444,21 +442,28 @@ async function testGetTouTiaoComments(articleId,aPageIndex,aPageSize){
 }
 
 
-async function getTouTiaoReplyComments(collection,count,commentId,aPageIndex,aPageSize){
+async function getTouTiaoReplyComments(collection,commentId,offset,size){
 
-    let data2 = await TouTiaoNetApi.request_replyCommentsListData(commentId,aPageIndex,aPageSize);
-    console.log("二级评论:"+JSON.stringify(data2));
+    let count = 0;
+
+    let data2 = await TouTiaoNetApi.request_replyCommentsListData(commentId,offset,size);
+    //console.log("二级评论:"+JSON.stringify(data2));
 
     if (data2.data.data.length > 0){
 
+        for (let comment of data2.data.data){
+
+            console.log("  "+comment.text);
+        }
+
         let r = await collection.insertMany(data2.data.data);
         count +=r.insertedCount;
-        console.log(Date.now() + JSON.stringify(r));
+        //console.log(Date.now() + JSON.stringify(r));
 
     }
 
     if (data2.data.has_more){
-        count += await getTouTiaoReplyComments(collection,count,commentId,aPageIndex+1,aPageSize);
+        count += await getTouTiaoReplyComments(collection,commentId,offset+data2.data.data.length,size);
     }
 
     return count;
@@ -470,12 +475,11 @@ async function getTouTiaoReplyComments(collection,count,commentId,aPageIndex,aPa
 
     let total = 0;
 
-    total = await testGetTouTiaoComments('6589502528277185038',0,10);
+    total = await testGetTouTiaoComments('6584205462130917896',0,10);
 
     console.log("获取评论总数total:"+total);
 
 })()
-
 
 
 //getNewsListData();

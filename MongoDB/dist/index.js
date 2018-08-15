@@ -291,7 +291,7 @@ function getNewsDetailData2() {
     });
 }
 
-async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
+async function testGetTouTiaoComments(articleId, offset, size) {
 
     var client = void 0;
     var count = 0;
@@ -303,8 +303,8 @@ async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
         var db = client.db(dbName);
         var collection = db.collection('toutiaoCommentsList');
 
-        var data = await _TouTiaoNetApi2.default.request_commentsListData(articleId, aPageIndex, aPageSize);
-        console.log("一级评论:" + JSON.stringify(data));
+        var data = await _TouTiaoNetApi2.default.request_commentsListData(articleId, offset, size);
+        //console.log("一级评论:" + JSON.stringify(data));
 
         if (data.data.total > 0 && data.data.comments.length > 0) {
 
@@ -312,7 +312,9 @@ async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
 
             count += result.insertedCount;
 
-            console.log(Date.now() + JSON.stringify(result));
+            //console.log("一级评论:" + result.insertedCount);
+
+            //console.log(Date.now() + JSON.stringify(result));
 
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
@@ -323,20 +325,17 @@ async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
                     var comments = _step.value;
 
 
+                    console.log(comments.text);
+
                     if (comments.reply_count > 0) {
 
-                        // let data2 = await TouTiaoNetApi.request_replyCommentsListData(comments.id,0,20);
-                        // console.log("二级评论:"+JSON.stringify(data2));
-                        //
-                        // if (data2.data.data.length > 0){
-                        //
-                        //     let r = await collection.insertMany(data2.data.data);
-                        //     count +=r.insertedCount;
-                        //     console.log(Date.now() + JSON.stringify(r));
-                        //
-                        // }
+                        var replyCount = 0;
 
-                        count = await getTouTiaoReplyComments(collection, count, comments.id, 0, 20);
+                        replyCount += await getTouTiaoReplyComments(collection, comments.id, 0, 10);
+
+                        console.log("  总数:" + replyCount);
+
+                        count += replyCount;
                     }
                 }
             } catch (err) {
@@ -356,7 +355,8 @@ async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
         }
 
         if (data.data.has_more) {
-            count += await testGetTouTiaoComments(articleId, aPageIndex + 1, aPageSize);
+            //console.log("当前评论总数:"+count);
+            count += await testGetTouTiaoComments(articleId, offset + data.data.comments.length, size);
         }
     } catch (err) {
         console.log(err.stack);
@@ -364,28 +364,54 @@ async function testGetTouTiaoComments(articleId, aPageIndex, aPageSize) {
 
     if (client) {
 
-        console.log("获取评论总数:" + count);
-
         client.close();
     }
 
     return count;
 }
 
-async function getTouTiaoReplyComments(collection, count, commentId, aPageIndex, aPageSize) {
+async function getTouTiaoReplyComments(collection, commentId, offset, size) {
 
-    var data2 = await _TouTiaoNetApi2.default.request_replyCommentsListData(commentId, aPageIndex, aPageSize);
-    console.log("二级评论:" + JSON.stringify(data2));
+    var count = 0;
+
+    var data2 = await _TouTiaoNetApi2.default.request_replyCommentsListData(commentId, offset, size);
+    //console.log("二级评论:"+JSON.stringify(data2));
 
     if (data2.data.data.length > 0) {
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+
+            for (var _iterator2 = data2.data.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var comment = _step2.value;
+
+
+                console.log("  " + comment.text);
+            }
+        } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                    _iterator2.return();
+                }
+            } finally {
+                if (_didIteratorError2) {
+                    throw _iteratorError2;
+                }
+            }
+        }
 
         var r = await collection.insertMany(data2.data.data);
         count += r.insertedCount;
-        console.log(Date.now() + JSON.stringify(r));
+        //console.log(Date.now() + JSON.stringify(r));
     }
 
     if (data2.data.has_more) {
-        count += await getTouTiaoReplyComments(collection, count, commentId, aPageIndex + 1, aPageSize);
+        count += await getTouTiaoReplyComments(collection, commentId, offset + data2.data.data.length, size);
     }
 
     return count;
@@ -395,7 +421,7 @@ async function getTouTiaoReplyComments(collection, count, commentId, aPageIndex,
 
     var total = 0;
 
-    total = await testGetTouTiaoComments('6589502528277185038', 0, 10);
+    total = await testGetTouTiaoComments('6584205462130917896', 0, 10);
 
     console.log("获取评论总数total:" + total);
 })();
