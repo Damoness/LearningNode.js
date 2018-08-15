@@ -10,6 +10,14 @@ var _Utils2 = _interopRequireDefault(_Utils);
 
 var _NewsModel = require('./model/NewsModel');
 
+var _TouTiao = require('./TouTiao');
+
+var _TouTiao2 = _interopRequireDefault(_TouTiao);
+
+var _QiChang = require('./QiChang');
+
+var _QiChang2 = _interopRequireDefault(_QiChang);
+
 var _mongodb = require('mongodb');
 
 var _TouTiaoNetApi = require('./utils/TouTiaoNetApi');
@@ -291,140 +299,12 @@ function getNewsDetailData2() {
     });
 }
 
-async function testGetTouTiaoComments(articleId, offset, size) {
-
-    var client = void 0;
-    var count = 0;
-
-    try {
-
-        client = await _mongodb.MongoClient.connect(url);
-
-        var db = client.db(dbName);
-        var collection = db.collection('toutiaoCommentsList');
-
-        var data = await _TouTiaoNetApi2.default.request_commentsListData(articleId, offset, size);
-        //console.log("一级评论:" + JSON.stringify(data));
-
-        if (data.data.total > 0 && data.data.comments.length > 0) {
-
-            var result = await collection.insertMany(data.data.comments);
-
-            count += result.insertedCount;
-
-            //console.log("一级评论:" + result.insertedCount);
-
-            //console.log(Date.now() + JSON.stringify(result));
-
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = data.data.comments[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var comments = _step.value;
+//fetchTouTiaoCommentsWithArticleId("6588137326092747278");
 
 
-                    console.log(comments.text);
+//A385203194882
 
-                    if (comments.reply_count > 0) {
-
-                        var replyCount = 0;
-
-                        replyCount += await getTouTiaoReplyComments(collection, comments.id, 0, 10);
-
-                        console.log("  总数:" + replyCount);
-
-                        count += replyCount;
-                    }
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
-        }
-
-        if (data.data.has_more) {
-            //console.log("当前评论总数:"+count);
-            count += await testGetTouTiaoComments(articleId, offset + data.data.comments.length, size);
-        }
-    } catch (err) {
-        console.log(err.stack);
-    }
-
-    if (client) {
-
-        client.close();
-    }
-
-    return count;
-}
-
-async function getTouTiaoReplyComments(collection, commentId, offset, size) {
-
-    var count = 0;
-
-    var data2 = await _TouTiaoNetApi2.default.request_replyCommentsListData(commentId, offset, size);
-    //console.log("二级评论:"+JSON.stringify(data2));
-
-    if (data2.data.data.length > 0) {
-        var _iteratorNormalCompletion2 = true;
-        var _didIteratorError2 = false;
-        var _iteratorError2 = undefined;
-
-        try {
-
-            for (var _iterator2 = data2.data.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var comment = _step2.value;
-
-
-                console.log("  " + comment.text);
-            }
-        } catch (err) {
-            _didIteratorError2 = true;
-            _iteratorError2 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                    _iterator2.return();
-                }
-            } finally {
-                if (_didIteratorError2) {
-                    throw _iteratorError2;
-                }
-            }
-        }
-
-        var r = await collection.insertMany(data2.data.data);
-        count += r.insertedCount;
-        //console.log(Date.now() + JSON.stringify(r));
-    }
-
-    if (data2.data.has_more) {
-        count += await getTouTiaoReplyComments(collection, commentId, offset + data2.data.data.length, size);
-    }
-
-    return count;
-}
-
-(async function f() {
-
-    var total = 0;
-
-    total = await testGetTouTiaoComments('6584205462130917896', 0, 10);
-
-    console.log("获取评论总数total:" + total);
-})();
+(0, _QiChang2.default)("A385203194882");
 
 //getNewsListData();
 //registerUser();
